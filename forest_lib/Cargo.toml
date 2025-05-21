@@ -1,0 +1,41 @@
+[package]
+name = "forest_secure_storage"
+version = "0.0.2"
+edition = "2021"
+authors = ["dotslashCosmic"]
+
+[dependencies]
+forest_lib = { path = "src/forest_lib" }[dependencies]
+
+# GUI
+egui = "0.19.0"
+eframe = { version = "0.31.1", features = ["persistence"] }
+rfd = "0.14" # For native file dialogs
+
+# Cryptography
+argon2 = "0.5" # Use the latest compatible version
+orion = { version = "0.17", default-features = false, features = ["xchacha20poly1305"] } # Argon2id KDF and XChaCha20-Poly1305 AEAD
+sha3 = "0.10" # SHA3-512
+shamirsecretsharing = "0.7"
+
+# Utilities
+rand = "0.8"
+uuid = { version = "1.8", features = ["v4", "fast-rng"] }
+zeroize = { version = "1.7", features = ["zeroize_derive"] }
+subtle = "2.5" # Constant-time comparison
+hex = "0.4"
+
+# Error Handling
+anyhow = "1.0" # For simple error handling with context
+thiserror = "1.0" # For creating custom error types
+
+# Memory Locking (platform-dependent)
+memlock = "0.1"
+
+# Serialization (manual for direct translation)
+serde = { version = "1.0", features = ["derive"] }
+bincode = "1.3"
+
+[[bin]]
+name = "forest"
+path = "src/main.rs"
