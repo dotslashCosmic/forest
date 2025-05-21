@@ -199,7 +199,7 @@ impl Default for MyApp {
                     if uk.is_key_initialized() {
                         match uk.get_uuid() {
                             Ok(uuid) => app.log_message(format!("Root Key UUID: {}", uuid)),
-                            Err(e) => app.log_message(format!("Could not get USB UUID: {}", e)),
+                            Err(e) => app.log_message(format!("Could not get Root Key UUID: {}", e)),
                         }
                     }
                 } else {
@@ -524,7 +524,6 @@ impl eframe::App for MyApp {
         };
 
 
-        // --- Initialize Popup ---
         if self.home_action_state == HomeActionState::ShowingInitializePopup {
             egui::Window::new("Initialize Root Key")
                 .collapsible(false)
@@ -565,7 +564,6 @@ impl eframe::App for MyApp {
                 });
         }
 
-        // --- Authenticate Popup ---
         if self.home_action_state == HomeActionState::ShowingAuthPopup {
             egui::Window::new("Authenticate Root Key")
                 .collapsible(false)
@@ -589,8 +587,7 @@ impl eframe::App for MyApp {
                     });
                 });
         }
-        
-        // --- Burn Confirm Popup ---
+
         // TODO Add setting to skip warning during setup
         if self.home_action_state == HomeActionState::ShowingBurnConfirmPopup {
             egui::Window::new("⚠️ BURN KEY ACTIVATED - CONFIRMATION ⚠️")
