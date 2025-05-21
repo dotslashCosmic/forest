@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="forest.png" alt="Forest Logo" width="220"/>
+</p>
+
 **Forest** (aka Secure Sharded Storage System/4S) offers a powerful and modern solution for data security, meticulously blending physical safeguards with cutting-edge encryption, based on inherent designs of RAID, and token-centric security models. Engineered for users and organizations seeking a resilient, user-controlled, and highly secure storage system, Forest is implemented in Rust for improved performance and safety. It also features local and/or cloud storage in tandem with a physical USB key, PINs, and passwords, creating multiple layers of defense for your sensitive data, protecting from unauthorized access, data breaches, tampering, malware, and loss due to single-point hardware failure.
 
 ---
